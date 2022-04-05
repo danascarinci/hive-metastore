@@ -19,7 +19,6 @@ RUN rm hadoop-${HADOOP_VERSION}/share/hadoop/common/lib/slf4j-log4j12-1.7.30.jar
 # Download Postgres driver
 RUN curl -L https://jdbc.postgresql.org/download/postgresql-42.3.3.jar > ${HIVE_HOME}/lib/postgresql-42.3.3.jar
 
-RUN apt-get update && apt-get install -y netcat
 
 COPY scripts/entrypoint.sh /entrypoint.sh
 

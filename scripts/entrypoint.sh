@@ -5,13 +5,7 @@ export HADOOP_HOME=/opt/hadoop-${HADOOP_VERSION}
 export HADOOP_CLASSPATH=${HADOOP_HOME}/share/hadoop/tools/lib/aws-java-sdk-bundle-1.11.375.jar:${HADOOP_HOME}/share/hadoop/tools/lib/hadoop-aws-3.2.0.jar
 export METASTORE_DB_HOSTNAME=${METASTORE_DB_HOSTNAME:-localhost}
 
-echo "Waiting for database on ${METASTORE_DB_HOSTNAME} to launch on ${METASTORE_DB_PORT} ..."
 
-while ! nc -z ${METASTORE_DB_HOSTNAME} ${METASTORE_DB_PORT}; do
-  sleep 1
-done
-
-echo "Database on ${METASTORE_DB_HOSTNAME}:${METASTORE_DB_PORT} started"
 echo "Init apache hive metastore on ${METASTORE_DB_HOSTNAME}:${METASTORE_DB_PORT} ..."
 
 
